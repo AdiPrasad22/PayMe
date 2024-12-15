@@ -128,7 +128,6 @@ router.post("/signin", async (req, res) => {
   res.status(200).json({ token: token });
 });
 
-router.use(authMiddleware);
 
 //-------------------------------------------------Updated Route--------------------------------------------------------------------
 
@@ -225,10 +224,6 @@ router.delete("/destroy", async (req, res) => {
 });
 //Error Handler
 
-router.use((err, req, res, next) => {
-  res.status(400).json({ err: err.message });
-  next();
-});
 
 //-------------------------------------------------All transaction Users Route--------------------------------------------------------------------
 
